@@ -24,7 +24,7 @@ spec:
             - name: LD_SUPERUSER_NAME 
               valueFrom:
                 secretKeyRef:
-                  name: secret-app
+                  name: app-secret 
                   key: LD_SUPERUSER_NAME
 
             - name: LD_SUPERUSER_PASSWORD
