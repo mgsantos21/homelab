@@ -77,7 +77,7 @@ data:
     no-autoupdate: true
 
     ingress:
-    - hostname: linkding.hankino.com
+    - hostname: linkding.mgs-devops.dev
       service: http://linkding:9090
 
     # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
