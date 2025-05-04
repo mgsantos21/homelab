@@ -30,7 +30,7 @@ spec:
             - name: LD_SUPERUSER_PASSWORD
               valueFrom:
                 secretKeyRef: 
-                  value: app-secret
+                  name: app-secret
                   key: LD_SUPERUSER_PASSWORD
 
           ports:
