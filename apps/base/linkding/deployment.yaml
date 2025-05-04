@@ -25,13 +25,13 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: app-secret 
-                  key: LD_SUPERUSER_NAME
+                  key: username
 
             - name: LD_SUPERUSER_PASSWORD
               valueFrom:
                 secretKeyRef: 
                   name: app-secret
-                  key: LD_SUPERUSER_PASSWORD
+                  key: password
 
           ports:
           - containerPort: 9090
