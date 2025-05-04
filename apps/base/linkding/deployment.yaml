@@ -22,9 +22,16 @@ spec:
           image: sissbruecker/linkding:1.31.0
           env:
             - name: LD_SUPERUSER_NAME 
-              value: app-secret
+              valueFrom:
+                secretKeyRef:
+                  name: secret-app
+                  key: LD_SUPERUSER_NAME
+
             - name: LD_SUPERUSER_PASSWORD
-              value: app-secret
+              valueFrom:
+                secretKeyRef: 
+                  value: app-secret
+                  key: LD_SUPERUSER_PASSWORD
 
           ports:
           - containerPort: 9090
