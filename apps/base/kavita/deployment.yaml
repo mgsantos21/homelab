@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kavita
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kavita
+  template:
+    metadata:
+      labels:
+        app: kavita
+    spec:
+      securityContext:
+        fsGroup: 33
+        runAsUser: 33
+        runAsGroup: 33
+
+      containers:
+        - name: kavita
+          image: jvmilazz0/kavita:0.9.0.2
+
+          envFrom:
+            #            - configMapRef:
+            #                 name: kavita-configmap
+            - secretRef:
+                name: kavita-container-env
+
+          ports:
+            - containerPort: 5000
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          volumeMounts:
+            - mountPath: "/etc/kavita/data"
+              name: kavita-data
+      volumes:
+        - name: kavita-data
+          persistentVolumeClaim:
+            claimName: kavita-data-pvc
