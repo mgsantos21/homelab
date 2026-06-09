@@ -20,13 +20,6 @@ spec:
       containers:
         - name: kavita
           image: jvmilazz0/kavita:0.9.0.2
-
-          envFrom:
-            #            - configMapRef:
-            #                 name: kavita-configmap
-            - secretRef:
-                name: kavita-container-env
-
           ports:
             - containerPort: 5000
 
