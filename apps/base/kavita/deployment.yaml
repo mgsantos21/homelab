@@ -27,7 +27,7 @@ spec:
             allowPrivilegeEscalation: false
 
           volumeMounts:
-            - mountPath: "/etc/kavita/data"
+            - mountPath: "/kavita/config"
               name: kavita-data
       volumes:
         - name: kavita-data
