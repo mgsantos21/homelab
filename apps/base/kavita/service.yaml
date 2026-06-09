@@ -6,5 +6,5 @@ spec:
   ports:
     - port: 5000
   selector:
-    app: linkding
+    app: kavita
   type: ClusterIP
