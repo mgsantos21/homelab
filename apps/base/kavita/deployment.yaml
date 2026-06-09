@@ -29,6 +29,8 @@ spec:
           volumeMounts:
             - mountPath: "/kavita/config"
               name: kavita-data
+            - mountPath: "/books"
+              name: kavita-data
       volumes:
         - name: kavita-data
           persistentVolumeClaim:
