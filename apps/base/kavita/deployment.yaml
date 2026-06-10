@@ -30,11 +30,12 @@ spec:
             - mountPath: "/kavita/config"
               name: kavita-data
             - mountPath: "/books"
-              name: kavita-data
-              hostPath:
-                path: /mnt/media/books
-                type: DirectoryOrCreate
+              name: kavita-books
       volumes:
         - name: kavita-data
           persistentVolumeClaim:
             claimName: kavita-data-pvc
+        - name: kavita-books
+          hostPath:
+            path: /mnt/media/books
+            type: DirectoryOrCreate
