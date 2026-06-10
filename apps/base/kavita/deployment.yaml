@@ -31,6 +31,9 @@ spec:
               name: kavita-data
             - mountPath: "/books"
               name: kavita-data
+              hostPath:
+                path: /mnt/media/books
+                type: DirectoryOrCreate
       volumes:
         - name: kavita-data
           persistentVolumeClaim:
