@@ -19,6 +19,7 @@ spec:
           envFrom:
             PUID: 1000
             PGID: 1000
+            TZ: Etc/UTC
 
           ports:
             - containerPort: 8083
